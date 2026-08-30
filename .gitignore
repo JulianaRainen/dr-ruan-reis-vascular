@@ -38,8 +38,6 @@ next-env.d.ts
 /work/
 
 # Local site packaging and development logs
-/package-stage/
-/package-stage-v2/
-/package-stage-v3/
-/site-build*.tar.gz
+/package-stage*/
+/site-*.tar.gz
 /work-server*.log
