@@ -36,3 +36,10 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# Local site packaging and development logs
+/package-stage/
+/package-stage-v2/
+/package-stage-v3/
+/site-build*.tar.gz
+/work-server*.log
