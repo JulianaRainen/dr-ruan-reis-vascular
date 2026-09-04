@@ -10,5 +10,13 @@ export function IntroReveal() {
     return () => window.clearTimeout(timeout);
   }, []);
   if (!visible) return null;
-  return <div className="intro-reveal" aria-label="Dr. Ruan Reis, Cirurgião Vascular"><div className="intro-rule"/><div className="intro-content"><img src="/logo.png" alt=""/><p>Dr. Ruan Reis</p><span>Cirurgia vascular</span><strong>Precisão para cuidar do que te move.</strong></div><div className="intro-rule intro-rule-bottom"/></div>;
+  return (
+    <div className="intro-reveal" aria-label="Dr. Ruan Reis, Cirurgião Vascular">
+      <div className="intro-rule" />
+      <div className="intro-content intro-content-logo-only">
+        <img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular" />
+      </div>
+      <div className="intro-rule intro-rule-bottom" />
+    </div>
+  );
 }
