@@ -1,0 +1,50 @@
+/* Bloco 01 — identidade visual oficial */
+:root {
+  --blue: #212936;
+  --beige: #A98D72;
+  --off-white: #DFD7D0;
+  --ink: var(--blue);
+  --paper: var(--off-white);
+  --line: var(--beige);
+  --coral: var(--beige);
+  --quiet: var(--blue);
+}
+
+body { background: var(--off-white) !important; color: var(--blue) !important; }
+.site-header, .site-header-fixed { background: var(--off-white) !important; border-color: var(--beige) !important; }
+.site-header-fixed { backdrop-filter: blur(15px); }
+nav a:hover, .text-link:hover, .header-contact:hover, .site-header nav a[aria-current="page"] { color: var(--beige) !important; }
+.button, .contact-details a.button, .r-cta, .whatsapp-float { background: var(--blue) !important; border-color: var(--blue) !important; color: var(--off-white) !important; box-shadow: none !important; }
+.button:hover, .contact-details a.button:hover, .r-cta:hover, .whatsapp-float:hover { background: var(--beige) !important; border-color: var(--beige) !important; color: var(--blue) !important; }
+.button-outline { background: transparent !important; color: var(--blue) !important; border-color: var(--blue) !important; }
+.eyebrow, .text-link span, .hero h1 em, .r-copy h1 em, .treatment > span { color: var(--beige) !important; }
+.lede, .hero-note, .intro-grid p, .treatment p, .protocol-body p, .contact-details p, .location-copy > p:last-child, .profile-details p, .procedure div > p, .clinical-note p, .treatments-hero > p:last-child, .profile-hero > div > p:not(.eyebrow) { color: var(--blue) !important; }
+
+main:not(.rveins)::before, .hero-portrait::after, .intro, .treatments, .protocol { background: transparent !important; }
+.hero-portrait::before, .profile-portrait::before, .profile-portrait::after { border-color: var(--beige) !important; }
+.hero-portrait img, .profile-portrait img { box-shadow: none !important; }
+.treatment-list, .treatment, .editorial-list, .section-heading, .location, .contact, .profile-details, .procedure, .procedure-list { border-color: var(--beige) !important; }
+
+.contact { background: var(--off-white) !important; }
+.contact h2 { color: var(--blue) !important; }
+.map-frame { border-color: var(--beige) !important; box-shadow: 12px 12px 0 var(--beige) !important; }
+
+.site-footer { background: var(--blue) !important; color: var(--off-white) !important; }
+.site-footer p, .site-footer span, .site-footer a, .footer-nav, .footer-contact, .footer-bottom, .footer-identity p { color: var(--off-white) !important; border-color: var(--beige) !important; }
+.footer-nav p, .footer-contact p, .footer-social a, .footer-contact span { color: var(--beige) !important; }
+
+.rveins, .video-frame { background: var(--blue) !important; color: var(--off-white) !important; }
+.r-header, .r-header-fixed { background: var(--blue) !important; border-color: var(--beige) !important; }
+.r-header nav, .r-header .back, .r-copy > p:not(.eyebrow), .r-footer { color: var(--off-white) !important; }
+.r-header nav a[aria-current="page"], .r-header .back, .r-footer a { color: var(--beige) !important; }
+.r-detail { background: var(--off-white) !important; color: var(--blue) !important; }
+.r-detail-grid p, .r-detail li { color: var(--blue) !important; border-color: var(--beige) !important; }
+.r-detail li svg { color: var(--beige) !important; }
+
+.intro-reveal { background: var(--blue) !important; color: var(--off-white) !important; }
+.intro-reveal::before { background: none !important; }
+.intro-content p, .intro-rule { color: var(--beige) !important; background-color: var(--beige) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
