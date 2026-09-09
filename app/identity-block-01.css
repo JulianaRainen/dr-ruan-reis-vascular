@@ -11,8 +11,15 @@
 }
 
 body { background: var(--off-white) !important; color: var(--blue) !important; }
-.site-header, .site-header-fixed { background: var(--off-white) !important; border-color: var(--beige) !important; }
+.site-header, .site-header-fixed {
+  background: var(--blue) !important;
+  border-color: var(--beige) !important;
+  color: var(--off-white) !important;
+}
 .site-header-fixed { backdrop-filter: blur(15px); }
+.site-header .brand img { filter: none !important; }
+.site-header nav a { color: var(--off-white) !important; }
+.site-header .header-contact { color: var(--beige) !important; border-color: var(--beige) !important; }
 nav a:hover, .text-link:hover, .header-contact:hover, .site-header nav a[aria-current="page"] { color: var(--beige) !important; }
 .button, .contact-details a.button, .r-cta, .whatsapp-float { background: var(--blue) !important; border-color: var(--blue) !important; color: var(--off-white) !important; box-shadow: none !important; }
 .button:hover, .contact-details a.button:hover, .r-cta:hover, .whatsapp-float:hover { background: var(--beige) !important; border-color: var(--beige) !important; color: var(--blue) !important; }
@@ -41,7 +48,10 @@ main:not(.rveins)::before, .hero-portrait::after, .intro, .treatments, .protocol
 .r-detail-grid p, .r-detail li { color: var(--blue) !important; border-color: var(--beige) !important; }
 .r-detail li svg { color: var(--beige) !important; }
 
-.intro-reveal { background: var(--blue) !important; color: var(--off-white) !important; }
+.intro-reveal {
+  background: linear-gradient(128deg, var(--blue) 0%, var(--blue) 57%, var(--beige) 100%) !important;
+  color: var(--off-white) !important;
+}
 .intro-reveal::before { background: none !important; }
 .intro-content p, .intro-rule { color: var(--beige) !important; background-color: var(--beige) !important; }
 
