@@ -9,6 +9,12 @@ const treatments = [
   ['Doppler vascular', 'Exame que orienta decisões clínicas com mais segurança e clareza.'],
 ];
 
+const educationalVideos = [
+  '/conteudo-educativo-01.mp4',
+  '/conteudo-educativo-02.mp4',
+  '/conteudo-educativo-03.mp4',
+];
+
 const testimonials = [
   '/depoimento-01.mp4',
   '/depoimento-02.mp4',
@@ -16,15 +22,32 @@ const testimonials = [
 ];
 
 export default function Home() {
-  return <main><IntroReveal/><ScrollEffects /><a className="whatsapp-float" href="https://wa.me/5573981893485" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp"><MessageCircle size={23}/><span>WhatsApp</span></a>
-    <header className="site-header"><a className="brand" href="#inicio" aria-label="Dr. Ruan Reis, início"><img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular"/></a><nav aria-label="Navegação principal"><a href="/o-medico">O médico</a><a href="/tratamentos">Tratamentos</a><a href="/r-veins">R-Veins</a></nav><a className="header-contact" href="#contato">Contato <ArrowUpRight size={15}/></a></header>
+  return <main>
+    <IntroReveal/>
+    <ScrollEffects/>
+    <a className="whatsapp-float" href="https://wa.me/5573981893485" target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp"><MessageCircle size={23}/><span>WhatsApp</span></a>
+    <header className="site-header">
+      <a className="brand" href="#inicio" aria-label="Dr. Ruan Reis, início"><img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular"/></a>
+      <nav aria-label="Navegação principal"><a href="/o-medico">O médico</a><a href="/tratamentos">Tratamentos</a><a href="/r-veins">R-Veins</a></nav>
+      <a className="header-contact" href="#contato">Contato <ArrowUpRight size={15}/></a>
+    </header>
+
     <section id="inicio" className="hero section-wrap"><div className="hero-copy"><p className="eyebrow">Cirurgia vascular · Sergipe</p><h1><ScrollText text="Cuidado vascular para seguir em movimento."/></h1><p className="lede">Diagnóstico cuidadoso e tratamentos conduzidos com precisão técnica, conversa clara e respeito ao seu ritmo.</p><div className="hero-actions"><a className="text-link" href="/o-medico">Conheça a abordagem <span>→</span></a></div></div><div className="hero-portrait" data-portrait><img src="/RuanReis.jpg" alt="Dr. Ruan Reis"/></div><aside className="hero-note"><span>CRM 6087</span><span>RQE 4959</span><span>Atendimento particular</span></aside></section>
+
     <section id="medico" className="intro section-wrap scroll-reveal" data-reveal><p className="eyebrow">Uma medicina que começa pela escuta</p><div className="intro-grid"><h2>Mais do que tratar um exame, entender o que faz diferença na sua rotina.</h2><div><p>O acompanhamento vascular pede precisão — e também contexto. Cada plano de cuidado parte de uma avaliação clínica completa, de expectativas alinhadas e de escolhas explicadas sem pressa.</p><a className="text-link" href="#tratamentos">Ver áreas de atuação <span>↓</span></a></div></div></section>
+
     <section id="tratamentos" className="treatments"><div className="section-wrap"><div className="section-heading scroll-reveal" data-reveal><p className="eyebrow">Áreas de atuação</p><h2>Decisões guiadas por diagnóstico.</h2></div><div className="treatment-list">{treatments.map(([title, description]) => <article key={title} className="treatment scroll-reveal" data-reveal><div><h3>{title}</h3><p>{description}</p></div></article>)}</div><a className="text-link treatments-link" href="/tratamentos">Conhecer os tratamentos <span>→</span></a></div></section>
+
+    <section className="educational-content scroll-reveal" data-reveal aria-labelledby="conteudos-title"><div className="section-wrap"><div className="educational-heading"><p className="eyebrow">Conteúdos educativos</p><h2 id="conteudos-title">Informação para uma conversa mais consciente sobre a saúde vascular.</h2></div><div className="educational-grid">{educationalVideos.map((src, index) => <figure className="educational-video" key={src}><video controls playsInline preload="metadata" aria-label={`Conteúdo educativo em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
+
     <section className="protocol section-wrap scroll-reveal" data-reveal><div><p className="eyebrow">Protocolo R-Veins</p><h2>Uma rota mais precisa para o tratamento de varizes.</h2></div><div className="protocol-body"><p>Conheça uma abordagem que integra avaliação, recursos de imagem e técnicas minimamente invasivas. A indicação depende sempre de consulta e diagnóstico individual.</p><a className="button button-outline" href="/r-veins">Conhecer R-Veins <ArrowUpRight size={18}/></a></div></section>
+
     <section className="testimonials scroll-reveal" data-reveal aria-labelledby="depoimentos-title"><div className="section-wrap"><div className="testimonials-heading"><p className="eyebrow">Relatos em vídeo</p><h2 id="depoimentos-title">Experiências compartilhadas por pacientes.</h2><p>Depoimentos publicados com autorização.</p></div><div className="testimonials-grid">{testimonials.map((src, index) => <figure className="testimonial-video" key={src}><video controls playsInline preload="metadata" aria-label={`Depoimento em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
+
     <section className="location section-wrap scroll-reveal" data-reveal><div className="location-copy"><p className="eyebrow">Localização</p><h2>Atendimento em Aracaju.</h2><p><MapPin size={17}/> Avenida Gonçalo Rolemberg Leite, 1813<br/>Aracaju · SE · 49045-280</p><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Gon%C3%A7alo+Rolemberg+Leite%2C+1813%2C+Aracaju%2C+SE%2C+49045-280" target="_blank" rel="noreferrer">Abrir no Google Maps <span>→</span></a></div><div className="map-frame"><iframe title="Mapa do consultório em Aracaju" src="https://www.google.com/maps?q=Avenida+Gon%C3%A7alo+Rolemberg+Leite%2C+1813%2C+Aracaju%2C+SE%2C+49045-280&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div></section>
+
     <section id="contato" className="contact section-wrap"><div><p className="eyebrow">Primeiro passo</p><h2>Vamos conversar sobre o seu cuidado.</h2></div><div className="contact-details"><a className="button" href="https://wa.me/5573981893485" target="_blank" rel="noreferrer">Agendar uma avaliação <ArrowUpRight size={18}/></a><p>Consulta e informações pelo WhatsApp.</p></div></section>
+
     <footer className="site-footer"><div className="footer-complete section-wrap"><div className="footer-identity"><img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular"/><p>Cirurgia vascular com precisão técnica, escuta e cuidado individualizado.</p></div><nav className="footer-nav" aria-label="Navegação do rodapé"><p>Navegação</p><a href="/o-medico">O médico</a><a href="/tratamentos">Tratamentos</a><a href="/r-veins">R-Veins</a><a href="#contato">Contato</a></nav><div className="footer-contact"><p>Contato</p><a href="https://wa.me/5573981893485" target="_blank" rel="noreferrer">WhatsApp</a><a href="https://www.instagram.com/drruanreis_vasc/" target="_blank" rel="noreferrer">@drruanreis_vasc</a><span>Avenida Gonçalo Rolemberg Leite, 1813<br/>Aracaju · SE</span></div></div><div className="footer-bottom section-wrap"><span>© 2026 Dr. Ruan Reis · CRM 6087 · RQE 4959</span><span>Conteúdo informativo. Não substitui avaliação médica.</span></div></footer>
   </main>;
 }
