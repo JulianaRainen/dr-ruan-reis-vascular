@@ -53,7 +53,8 @@ main:not(.rveins)::before, .hero-portrait::after, .intro, .treatments, .protocol
   color: var(--off-white) !important;
 }
 .intro-reveal::before { background: none !important; }
-.intro-content p, .intro-rule { color: var(--beige) !important; background-color: var(--beige) !important; }
+.intro-content p { color: var(--beige) !important; background: transparent !important; }
+.intro-rule { background-color: var(--beige) !important; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
