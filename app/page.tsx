@@ -10,9 +10,9 @@ const treatments = [
 ];
 
 const educationalVideos = [
-  '/conteudo-educativo-01.mp4',
-  '/conteudo-educativo-02.mp4',
-  '/conteudo-educativo-03.mp4',
+  { src: '/conteudo-educativo-01.mp4', poster: '/capa-conteudo-01-diagnostico.png' },
+  { src: '/conteudo-educativo-02.mp4', poster: '/capa-conteudo-02-atendimento.png' },
+  { src: '/conteudo-educativo-03.mp4', poster: '/capa-conteudo-03-depoimento.png' },
 ];
 
 const testimonials = [
@@ -38,7 +38,7 @@ export default function Home() {
 
     <section id="tratamentos" className="treatments"><div className="section-wrap"><div className="section-heading scroll-reveal" data-reveal><p className="eyebrow">Áreas de atuação</p><h2>Decisões guiadas por diagnóstico.</h2></div><div className="treatment-list">{treatments.map(([title, description]) => <article key={title} className="treatment scroll-reveal" data-reveal><div><h3>{title}</h3><p>{description}</p></div></article>)}</div><a className="text-link treatments-link" href="/tratamentos">Conhecer os tratamentos <span>→</span></a></div></section>
 
-    <section className="educational-content scroll-reveal" data-reveal aria-labelledby="conteudos-title"><div className="section-wrap"><div className="educational-heading"><p className="eyebrow">Conteúdos educativos</p><h2 id="conteudos-title">Informação para uma conversa mais consciente sobre a saúde vascular.</h2></div><div className="educational-grid">{educationalVideos.map((src, index) => <figure className="educational-video" key={src}><video controls playsInline preload="metadata" aria-label={`Conteúdo educativo em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
+    <section className="educational-content scroll-reveal" data-reveal aria-labelledby="conteudos-title"><div className="section-wrap"><div className="educational-heading"><p className="eyebrow">Conteúdos educativos</p><h2 id="conteudos-title">Informação para uma conversa mais consciente sobre a saúde vascular.</h2></div><div className="educational-grid">{educationalVideos.map(({ src, poster }, index) => <figure className="educational-video" key={src}><video controls playsInline preload="metadata" poster={poster} aria-label={`Conteúdo educativo em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
 
     <section className="protocol section-wrap scroll-reveal" data-reveal><div><p className="eyebrow">Protocolo R-Veins</p><h2>Uma rota mais precisa para o tratamento de varizes.</h2></div><div className="protocol-body"><p>Conheça uma abordagem que integra avaliação, recursos de imagem e técnicas minimamente invasivas. A indicação depende sempre de consulta e diagnóstico individual.</p><a className="button button-outline" href="/r-veins">Conhecer R-Veins <ArrowUpRight size={18}/></a></div></section>
 
