@@ -15,7 +15,7 @@ export function IntroReveal() {
       <div className="intro-rule" />
       <div className="intro-content intro-content-logo-only">
         <img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular" />
-        <p>Devolvendo sua saúde e leveza para suas pernas.</p>
+        <p>Saúde das veias, qualidade de vida.</p>
       </div>
       <div className="intro-rule intro-rule-bottom" />
     </div>
