@@ -16,6 +16,7 @@ const educationalVideos = [
   { src: '/conteudo-educativo-03.mp4', poster: '/capa-conteudo-03-depoimento.png' },
 ];
 
+// Pendente de acessibilidade para os vídeos do site: adicionar legendas somente após receber transcrições validadas.
 const testimonials = [
   '/depoimento-01.mp4',
   '/depoimento-02.mp4',
