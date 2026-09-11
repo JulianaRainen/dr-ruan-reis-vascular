@@ -1,6 +1,7 @@
 import { ArrowUpRight, Check } from 'lucide-react';
 import { ScrollEffects } from '@/components/scroll-effects';
 import { ScrollText } from '@/components/scroll-text';
+import { MobileNavigation } from '@/components/mobile-navigation';
 
 export default function Medico() {
   return <main>
@@ -10,6 +11,7 @@ export default function Medico() {
       <nav aria-label="Navegação principal">
         <a href="/">Início</a><a href="/o-medico" aria-current="page">O médico</a><a href="/tratamentos">Tratamentos</a><a href="/r-veins">R-Veins</a>
       </nav>
+      <MobileNavigation currentPath="/o-medico"/>
       <a className="button button-small" href="https://wa.me/5573981893485" target="_blank" rel="noreferrer">Agendar consulta <ArrowUpRight size={16}/></a>
     </header>
 

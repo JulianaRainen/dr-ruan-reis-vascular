@@ -2,6 +2,7 @@ import { ArrowUpRight, MapPin, MessageCircle } from 'lucide-react';
 import { ScrollEffects } from '@/components/scroll-effects';
 import { ScrollText } from '@/components/scroll-text';
 import { IntroReveal } from '@/components/intro-reveal';
+import { MobileNavigation } from '@/components/mobile-navigation';
 
 const treatments = [
   ['Cirurgia vascular', 'Avaliação e tratamento individualizado para doenças venosas e arteriais.'],
@@ -29,6 +30,7 @@ export default function Home() {
     <header className="site-header">
       <a className="brand" href="#inicio" aria-label="Dr. Ruan Reis, início"><img src="/logo.png" alt="Dr. Ruan Reis, Cirurgião Vascular"/></a>
       <nav aria-label="Navegação principal"><a href="/o-medico">O médico</a><a href="/tratamentos">Tratamentos</a><a href="/r-veins">R-Veins</a></nav>
+      <MobileNavigation currentPath="/" homeHref="#inicio"/>
       <a className="header-contact" href="#contato">Contato <ArrowUpRight size={15}/></a>
     </header>
 
