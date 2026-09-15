@@ -18,9 +18,9 @@ const educationalVideos = [
 
 // Pendente de acessibilidade para os vídeos do site: adicionar legendas somente após receber transcrições validadas.
 const testimonials = [
-  '/depoimento-01.mp4',
-  '/depoimento-02.mp4',
-  '/depoimento-03.mp4',
+  { src: '/depoimento-01.mp4', poster: '/capa-depoimento-01.webp' },
+  { src: '/depoimento-02.mp4', poster: '/capa-depoimento-02.webp' },
+  { src: '/depoimento-03.mp4', poster: '/capa-depoimento-03.webp' },
 ];
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
 
     <section className="protocol section-wrap scroll-reveal" data-reveal><div><p className="eyebrow">Protocolo R-Veins</p><h2>Uma rota mais precisa para o tratamento de varizes.</h2></div><div className="protocol-body"><p>Conheça uma abordagem que integra avaliação, recursos de imagem e técnicas minimamente invasivas. A indicação depende sempre de consulta e diagnóstico individual.</p><a className="button button-outline" href="/r-veins">Conhecer R-Veins <ArrowUpRight size={18}/></a></div></section>
 
-    <section className="testimonials scroll-reveal" data-reveal aria-labelledby="depoimentos-title"><div className="section-wrap"><div className="testimonials-heading"><p className="eyebrow">Relatos em vídeo</p><h2 id="depoimentos-title">Experiências compartilhadas por pacientes.</h2><p>Depoimentos publicados com autorização.</p></div><div className="testimonials-grid">{testimonials.map((src, index) => <figure className="testimonial-video" key={src}><video controls playsInline preload="metadata" aria-label={`Depoimento em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
+    <section className="testimonials scroll-reveal" data-reveal aria-labelledby="depoimentos-title"><div className="section-wrap"><div className="testimonials-heading"><p className="eyebrow">Relatos em vídeo</p><h2 id="depoimentos-title">Experiências compartilhadas por pacientes.</h2><p>Depoimentos publicados com autorização.</p></div><div className="testimonials-grid">{testimonials.map(({ src, poster }, index) => <figure className="testimonial-video" key={src}><video controls playsInline preload="metadata" poster={poster} aria-label={`Depoimento em vídeo ${index + 1}`}><source src={src} type="video/mp4"/>Seu navegador não suporta este vídeo.</video></figure>)}</div></div></section>
 
     <section className="location section-wrap scroll-reveal" data-reveal><div className="location-copy"><p className="eyebrow">Localização</p><h2>Atendimento em Aracaju.</h2><p><MapPin size={17}/> Avenida Gonçalo Rolemberg Leite, 1813<br/>Aracaju · SE · 49045-280</p><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+Gon%C3%A7alo+Rolemberg+Leite%2C+1813%2C+Aracaju%2C+SE%2C+49045-280" target="_blank" rel="noreferrer">Abrir no Google Maps <span>→</span></a></div><div className="map-frame"><iframe title="Mapa do consultório em Aracaju" src="https://www.google.com/maps?q=Avenida+Gon%C3%A7alo+Rolemberg+Leite%2C+1813%2C+Aracaju%2C+SE%2C+49045-280&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div></section>
 

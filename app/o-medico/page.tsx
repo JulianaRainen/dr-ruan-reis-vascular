@@ -2,6 +2,7 @@ import { ArrowUpRight, Check } from 'lucide-react';
 import { ScrollEffects } from '@/components/scroll-effects';
 import { ScrollText } from '@/components/scroll-text';
 import { MobileNavigation } from '@/components/mobile-navigation';
+import { InternalFooter } from '@/components/internal-footer';
 
 export default function Medico() {
   return <main>
@@ -41,9 +42,9 @@ export default function Medico() {
 
     <section className="profile-details profile-approach section-wrap scroll-reveal" data-reveal>
       <p className="eyebrow">Seu cuidado</p>
-      <div><h2>Escuta, clareza e escolhas individualizadas.</h2><p>Em cada consulta, o objetivo é compreender a história do paciente, explicar os caminhos possíveis e indicar condutas compatíveis com cada caso.</p></div>
+      <div><h2>Escuta, clareza e escolhas individualizadas.</h2><p>Em cada consulta, o objetivo é compreender a história do paciente, explicar os caminhos possíveis e indicar condutas compatíveis com cada caso.</p><dl className="care-principles"><div><dt>Escuta</dt><dd>Compreender a história, as necessidades e o contexto de cada paciente antes de definir os próximos passos.</dd></div><div><dt>Clareza</dt><dd>Explicar os caminhos possíveis de forma compreensível, favorecendo uma conversa mais consciente sobre o cuidado vascular.</dd></div><div><dt>Escolhas individualizadas</dt><dd>Considerar as características de cada caso para orientar a conduta de forma individualizada.</dd></div></dl></div>
     </section>
 
-    <footer className="site-footer"><div className="footer-bottom section-wrap"><span>Dr. Ruan Reis · CRM 6087 · RQE 4959</span><a href="/">Voltar ao início</a></div></footer>
+    <InternalFooter/>
   </main>;
 }

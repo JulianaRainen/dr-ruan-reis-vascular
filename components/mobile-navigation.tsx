@@ -1,7 +1,7 @@
 'use client';
 
 import { Menu, X } from 'lucide-react';
-import { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type MobileNavigationProps = {
   currentPath: string;
@@ -18,8 +18,8 @@ const links = [
 export function MobileNavigation({ currentPath, homeHref = '/' }: MobileNavigationProps) {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const panelId = useId();
+  const panelRef = useRef<HTMLDialogElement>(null);
+  const panelId = `mobile-navigation-${currentPath === '/' ? 'home' : currentPath.slice(1)}`;
 
   const close = () => {
     setOpen(false);
@@ -32,7 +32,7 @@ export function MobileNavigation({ currentPath, homeHref = '/' }: MobileNavigati
     window.requestAnimationFrame(() => firstLink?.focus());
   }, [open]);
 
-  const handlePanelKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handlePanelKeyDown = (event: React.KeyboardEvent<HTMLDialogElement>) => {
     if (event.key === 'Escape') {
       event.preventDefault();
       close();
@@ -71,7 +71,7 @@ export function MobileNavigation({ currentPath, homeHref = '/' }: MobileNavigati
       {open && (
         <>
           <button className="mobile-drawer-backdrop" type="button" aria-label="Fechar menu" onClick={close} />
-          <div ref={panelRef} id={panelId} className="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Navegação principal" onKeyDown={handlePanelKeyDown}>
+          <dialog ref={panelRef} id={panelId} open className="mobile-nav-panel" aria-label="Navegação principal" onCancel={(event) => { event.preventDefault(); close(); }} onKeyDown={handlePanelKeyDown}>
             <div className="mobile-nav-panel-head">
               <span>Navegação</span>
               <button className="mobile-nav-close" type="button" aria-label="Fechar menu" onClick={close}><X size={22} aria-hidden="true" /></button>
@@ -83,7 +83,7 @@ export function MobileNavigation({ currentPath, homeHref = '/' }: MobileNavigati
                 return <a key={label} href={destination} aria-current={isCurrent ? 'page' : undefined} onClick={() => setOpen(false)}>{label}</a>;
               })}
             </nav>
-          </div>
+          </dialog>
         </>
       )}
     </div>
