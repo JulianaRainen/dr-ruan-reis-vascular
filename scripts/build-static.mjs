@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { access, cp, rm } from 'node:fs/promises';
+import { access, cp, rename, rm } from 'node:fs/promises';
 import { constants } from 'node:fs';
 
 const exitCode = await new Promise((resolve, reject) => {
@@ -20,9 +20,10 @@ if (exitCode !== 0 && !windowsShutdownAssertion) {
   process.exit(exitCode);
 }
 
-// Hostinger must receive one self-contained, static directory — never the
-// mixed dist/ folder, which also contains the Worker runtime.
-const staticOutput = 'dist/hostinger';
+// Vinext uses dist/ for both Worker and browser build artifacts. Stage the
+// browser export, then replace dist/ with that export so conventional hosts
+// that only accept "dist" receive a self-contained static site.
+const staticOutput = '.hostinger-static';
 await rm(staticOutput, { recursive: true, force: true });
 await cp('dist/client', staticOutput, { recursive: true });
 
@@ -33,3 +34,6 @@ await rm(`${staticOutput}/logo-premium-preview.png`, { force: true });
 for (const page of ['index.html', 'o-medico.html', 'tratamentos.html', 'r-veins.html']) {
   await access(`${staticOutput}/${page}`, constants.R_OK);
 }
+
+await rm('dist', { recursive: true, force: true });
+await rename(staticOutput, 'dist');
