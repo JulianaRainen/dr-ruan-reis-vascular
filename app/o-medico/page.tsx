@@ -4,6 +4,8 @@ import { ScrollText } from '@/components/scroll-text';
 import { MobileNavigation } from '@/components/mobile-navigation';
 import { InternalFooter } from '@/components/internal-footer';
 
+export const dynamic = 'force-static';
+
 export default function Medico() {
   return <main>
     <ScrollEffects/>

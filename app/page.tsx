@@ -4,6 +4,8 @@ import { ScrollText } from '@/components/scroll-text';
 import { IntroReveal } from '@/components/intro-reveal';
 import { MobileNavigation } from '@/components/mobile-navigation';
 
+export const dynamic = 'force-static';
+
 const treatments = [
   ['Cirurgia vascular', 'Avaliação e tratamento individualizado para doenças venosas e arteriais.'],
   ['Varizes e microvarizes', 'Estratégias minimamente invasivas definidas após diagnóstico preciso.'],

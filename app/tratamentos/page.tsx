@@ -4,6 +4,8 @@ import { ScrollText } from '@/components/scroll-text';
 import { MobileNavigation } from '@/components/mobile-navigation';
 import { InternalFooter } from '@/components/internal-footer';
 
+export const dynamic = 'force-static';
+
 const procedures=[
   {title:'Cirurgia vascular',copy:'Procedimentos para condições venosas ou arteriais são definidos após avaliação clínica e exames adequados.',note:'O foco é tratar a causa identificada e orientar cada etapa do cuidado.',image:'/tratamento-cirurgia-vascular.webp',alt:'Dr. Ruan Reis com equipamento clínico',mediaClass:'procedure-media--clinical'},
   {title:'Varizes e microvarizes',copy:'Podem ser tratadas com diferentes recursos, de acordo com o tipo de vaso, sintomas e objetivos clínicos.',note:'A indicação depende de uma avaliação individual e de expectativas bem alinhadas.',image:'/tratamento-varizes-microvarizes.webp',alt:'Procedimento vascular na perna',mediaClass:'procedure-media--varizes'},
