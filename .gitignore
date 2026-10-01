@@ -13,7 +13,6 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
 
 # misc
@@ -32,12 +31,13 @@ yarn-error.log*
 # deployment and generated files
 .vercel
 next-env.d.ts
-/dist/
-/.wrangler/
 /outputs/
 /work/
 
-# Local site packaging and development logs
+# Local build artifacts
+/dist/
+/.vinext/
+/.wrangler/
 /package-stage*/
 /site-*.tar.gz
 /work-server*.log
